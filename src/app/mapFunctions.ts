@@ -96,17 +96,19 @@ export class IslandGenerator{
     }
     //generates an island in a given position, using random walk
     generateIsland(terrainVolume:number, initPos:number[]){
+        let volume = terrainVolume;
         initPos = this.position;
         this.setBlock(floor.TERR);
         let exception = false;
 
-        while( terrainVolume > 0 || exception){
+        while( volume > 0 || exception){
             let directions = this.getLegalMoves();
             let direction = directions[Math.floor(Math.random() * 4)];
             this.moveGenerator(direction);
             this.setBlock(floor.TERR);
-            terrainVolume -= 1;
+            volume -= 1;
         }
+        return undefined;
     }
         
 }

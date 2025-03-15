@@ -1,12 +1,9 @@
+"use client";
+
 import {IslandGenerator, Map, floor} from "./mapFunctions";
 
 
-export default function MapDisplay() {
-    let map = new Map(40, 40);
-    map.printMap();
-    let islandGenerator = new IslandGenerator([0, 0], map);
-    islandGenerator.generateIsland(1200,islandGenerator.position);
-
+export default function MapDisplay({map}: {map: Map}){
     return (
         <div>
             <div>{mapToGrid(map)}</div>
@@ -15,7 +12,6 @@ export default function MapDisplay() {
 
     );
 }
-
 
 //Generates an HTML grid of a map
 function mapToGrid(map: Map){
