@@ -21,7 +21,7 @@ export default function Selector() {
         <div className="flex">
             <MapDisplay map={map}/>
             <div className="m-4">
-                <Button onClick={handleNewGeneration} className=" bg-black text-white py-1 px-6 rounded-sm cursor-pointer m-1 w-max bg-center bg-repeat">
+                <Button onClick={handleNewGeneration} className=" bg-black text-white py-1 px-6 rounded-sm cursor-pointer m-1 w-max bg-center bg-repeat hover:bg-opacity-80">
                     Generate
                 </Button>
                 <Slider label="TERRAIN" value={volume} setValue={setVolume} min={0} max={1000} step={10} onSelectAct={handleNewGeneration}/>

@@ -10,7 +10,7 @@ let selectedValue = "Cellular automata";
       <div className="flex flex-col items-center justify-center w-full py-4">
         <h1 className="text-2xl font-bold tracking-tight text-black font-mono">Terrain Grid Generator</h1>
         <Selector
-          options={["Cellular automata", "Random Walk Map"]}
+          options={["Random Walk Map","Cellular automata"]}
           onChange={(selectedOption) => {
         console.log(`Selected ${selectedOption}`);
         selectedValue = selectedOption;

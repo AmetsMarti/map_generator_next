@@ -17,6 +17,7 @@ const eslintConfig = [
     rules: {
       "prefer-const": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-unused-expressions": "off",
     },
   },
 ];

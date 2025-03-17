@@ -103,7 +103,7 @@ export class IslandGenerator{
 
         while( volume > 0 || exception){
             let directions = this.getLegalMoves();
-            let direction = directions[Math.floor(Math.random() * 4)];
+            let direction = directions[Math.floor(Math.random() * directions.length)];
             this.moveGenerator(direction);
             this.setBlock(floor.TERR);
             volume -= 1;

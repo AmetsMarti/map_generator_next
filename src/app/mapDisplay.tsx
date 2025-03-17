@@ -32,7 +32,7 @@ function mapToGrid(map: Map){
                 row.push(<div key={i.toString() + "," + j.toString()} className = {className} style={{animationDelay: `${i * 0.05 + j* 0.01}s`, animationFillMode: 'forwards'}}></div>);
             }
             else{
-                className = `${className} bg-black h-4 w-4 transition-all duration-1 animate-pulse border-1 border-dotted shadow-lg`;
+                className = `${className} bg-black h-4 w-4 transition-all duration-1 animate-pulse border-1 border-dotted shadow-lg hover:bg-red-600`;
                 row.push(<div key={i.toString() + "," + j.toString()} className= {className} style={{animationDelay: `${i * 0.05 + j* 0.01}s`, animationFillMode: 'forwards'}}></div>);
             }
         }
