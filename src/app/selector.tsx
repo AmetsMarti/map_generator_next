@@ -7,8 +7,8 @@ import {IslandGenerator, Map} from "./mapFunctions";
 import Slider from "./components/Slider";
 
 export default function Selector() {
-    const [size, setSize] = useState(70);
-    const [volume, setVolume] = useState(1200);
+    const [size, setSize] = useState(50);
+    const [volume, setVolume] = useState(50);
     const [map, setMap] = useState(new Map(size, size));
     
     function handleNewGeneration() {
@@ -21,11 +21,11 @@ export default function Selector() {
         <div className="flex gap-4">
 
             <MapDisplay map={map}/>
-            <div>
-                <Button onClick={handleNewGeneration} className="bg-purple-900 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded cursor-pointer m-2 bg-center">
+            <div className="m-4">
+                <Button onClick={handleNewGeneration} className=" bg-black text-white py-1 px-6 rounded-sm cursor-pointer m-1 w-max bg-center">
                     Generate
                 </Button>
-                <Slider label="Size" value={volume} setValue={setVolume} min={0} max={9000} step={100}/>
+                <Slider label="Size" value={volume} setValue={setVolume} min={0} max={1000} step={10}/>
 
             </div>
             
