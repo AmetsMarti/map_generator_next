@@ -18,14 +18,13 @@ export default function Selector() {
         setMap(newMap);
     }
     return (
-        <div className="flex gap-4">
-
+        <div className="flex">
             <MapDisplay map={map}/>
             <div className="m-4">
-                <Button onClick={handleNewGeneration} className=" bg-black text-white py-1 px-6 rounded-sm cursor-pointer m-1 w-max bg-center">
+                <Button onClick={handleNewGeneration} className=" bg-black text-white py-1 px-6 rounded-sm cursor-pointer m-1 w-max bg-center bg-repeat">
                     Generate
                 </Button>
-                <Slider label="Size" value={volume} setValue={setVolume} min={0} max={1000} step={10}/>
+                <Slider label="TERRAIN" value={volume} setValue={setVolume} min={0} max={1000} step={10} onSelectAct={handleNewGeneration}/>
 
             </div>
             

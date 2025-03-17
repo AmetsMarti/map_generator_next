@@ -1,5 +1,5 @@
 "use client";
-import {IslandGenerator, Map, floor} from "./mapFunctions";
+import {Map, floor} from "./mapFunctions";
 
 
 export default function MapDisplay({map}: {map: Map}){
@@ -28,12 +28,12 @@ function mapToGrid(map: Map){
             let className = i + "," + j;
 
             if (map.map[i][j] === floor.WALL){
-                className = `${className} bg-white h-4 w-4 transition-opacity duration-500 opacity-100 border-dotted border-2 animate-fade-in`;
-                row.push(<div key={i.toString() + "," + j.toString()} className = {className}></div>);
+                className = `${className} bg-white h-4 w-4 transition-opacity duration-500 opacity-100 border-dotted border-2 animate-fade-out`;
+                row.push(<div key={i.toString() + "," + j.toString()} className = {className} style={{animationDelay: `${i * 0.05 + j* 0.01}s`, animationFillMode: 'forwards'}}></div>);
             }
             else{
-                className = `${className} bg-black h-4 w-4 transition-opacity duration-500 opacity-100 animate-fade-in border-1 border-dotted shadow-lg`;
-                row.push(<div key={i.toString() + "," + j.toString()} className= {className}></div>);
+                className = `${className} bg-black h-4 w-4 transition-all duration-1 animate-pulse border-1 border-dotted shadow-lg`;
+                row.push(<div key={i.toString() + "," + j.toString()} className= {className} style={{animationDelay: `${i * 0.05 + j* 0.01}s`, animationFillMode: 'forwards'}}></div>);
             }
         }
         grid.push(<div key={i.toString()} className="flex">{row}</div>);
